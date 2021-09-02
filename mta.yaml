@@ -1,0 +1,27 @@
+ID: justjava
+_schema-version: '2.1'
+description: Just Java Please
+version: 0.0.1
+modules:
+  - name: sboot
+    type: java
+    path: sboot
+    parameters:
+      memory: 1024M
+    provides:
+      - name: sboot_api
+        properties:
+          url: '${default-url}'
+    build-parameters:
+      build-result: 'target/*.jar'
+
+  - name: sweb
+    type: java
+    path: sweb
+    parameters:
+       memory: 1024M
+    provides:
+     - name: sweb_api
+       properties:
+          url: ${default-url}
+
